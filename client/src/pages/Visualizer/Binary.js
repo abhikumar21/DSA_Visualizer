@@ -111,7 +111,7 @@ const Binary = () => {
 
 
 const preOrder = async(node) => {
-  if (!node) return;
+  if (node==null) return;
   d3.select(`#node-${node.data.name}`)
   .transition()
   // .duration(500)

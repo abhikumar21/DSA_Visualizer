@@ -46,7 +46,7 @@ const insertionSort = async(array)=> {
       bar3.style.backgroundColor = "blue";
       // array[j+1] = array[j];
       swapBubble(array, j, j+1);
-      await sleep(1000);
+      await sleep(500);
       setBoolfn(newBool => newBool===1 ? 0 : 1);
       j--;
       bar1.style.backgroundColor = "green";
@@ -54,7 +54,7 @@ const insertionSort = async(array)=> {
       bar3.style.backgroundColor = "green";
     }
     array[j+1] = current;
-    await sleep(1500);
+    await sleep(1000);
     setBoolfn(newBool => newBool===1 ? 0 : 1);
   }
 }  
@@ -71,7 +71,7 @@ const bubbleSort = async(array) => {
         await swapBubble(array, j, j+1); 
         setBoolfn(newBool => newBool===1 ? 0 : 1);
       }
-      await sleep(400);
+      await sleep(200);
       // const bar1 = document.getElementById(`bar${j}`);
       // const bar2 = document.getElementById(`bar${j+1}`);
       bar1.style.backgroundColor="blue";
@@ -86,7 +86,7 @@ const swapBubble = async(array, i, j)=> {
   // bar1.style.backgroundColor="green";
   // bar2.style.backgroundColor="green";
 
-  await sleep(400);
+  await sleep(200);
     let temp = array[i];
     array[i] = array[j];
     array[j] = temp;  
@@ -139,9 +139,9 @@ const merge = async(array, s, mid, e) => {
     const bar2 = document.getElementById(`bar${s+i}`)
     bar1.style.backgroundColor = "blue"
     bar2.style.backgroundColor = "blue"
-    await sleep(500);
+    await sleep(400);
     array[s + i] = a[i];
-    await sleep(500);
+    await sleep(400);
     setBoolfn(prevBoolfn => prevBoolfn === 0 ? 1 : 0);
     bar1.style.backgroundColor = "green"
     bar2.style.backgroundColor = "green"
@@ -169,7 +169,7 @@ const merge = async(array, s, mid, e) => {
     let pivot=array[low];
     const barlow = document.getElementById(`bar${low}`);
     barlow.style.backgroundColor = "yellow";
-    await sleep(1000);
+    await sleep(500);
 
     while(i<j) {
         while(i<=high-1 && array[i]<=pivot) {
@@ -181,7 +181,7 @@ const merge = async(array, s, mid, e) => {
         if(i<j){
           await swap(array, i, j);  
           setBoolfn(prevBoolfn => prevBoolfn === 0 ? 1 : 0);
-          await sleep(1000);
+          await sleep(500);
           const bar1 = document.getElementById(`bar${i}`);
           const bar2 = document.getElementById(`bar${j}`);
           bar1.style.backgroundColor="blue";
@@ -191,7 +191,7 @@ const merge = async(array, s, mid, e) => {
     }
     await swap(array, j, low);
     setBoolfn(prevBoolfn => prevBoolfn === 0 ? 1 : 0);
-    await sleep(1000);
+    await sleep(500);
     const bar1 = document.getElementById(`bar${j}`);
     const bar2 = document.getElementById(`bar${low}`);
     bar1.style.backgroundColor="blue";
@@ -206,7 +206,7 @@ const merge = async(array, s, mid, e) => {
     bar1.style.backgroundColor="green";
     bar2.style.backgroundColor="green";
 
-    await sleep(1000);
+    await sleep(500);
       let temp = array[i];
       array[i] = array[j];
       array[j] = temp;  
